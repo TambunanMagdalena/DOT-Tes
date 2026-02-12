@@ -1,0 +1,12 @@
+// pkg/customerror/base.error.ts
+
+export class BaseError extends Error {
+  public readonly statusCode: number;
+  public readonly isOperational: boolean;
+
+  constructor(message: string, statusCode = 500, isOperational = true) {
+    super(message);
+    this.statusCode = statusCode;
+    this.isOperational = isOperational;
+  }
+}
